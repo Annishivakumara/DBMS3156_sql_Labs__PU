@@ -16,3 +16,5 @@ create table faculty(
  Sid int , foreign key(Sid) references Student(Sid), Cname varchar(20) ,  foreign key(Cname) references key(Cname) , on delete casecade);
  
  
+insert into Student values(
+0619, 'Shivu', 'CSE2001', 'Senior' , 2005-10-17);
