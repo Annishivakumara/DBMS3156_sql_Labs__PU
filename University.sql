@@ -18,3 +18,23 @@ create table faculty(
  
 insert into Student values(
 0619, 'Shivu', 'CSE2001', 'Senior' , 2005-10-17);
+0620, 'Shashi' , 'CSE2002', 'Junior' , 2006-11-20),
+0621, 'Rakshu' , 'CSE2003', 'Senior' , 2005-01-03),
+0622, 'Manasa' , 'Math2005', 'Senior' , 2004-12-03);
+
+insert into  faculty values(
+101, 'Prince' , 'DSA'),
+111, 'Deepthi' , 'DBMS'),
+222, 'Shwetha' , 'FDA'),
+333, 'Pradeep' , 'MATH');
+
+insert into Course values(
+
+);
+
+insert into Enrolled values(
+  
+);
+
+
+
