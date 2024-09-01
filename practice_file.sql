@@ -57,8 +57,8 @@ insert into Employee values(
 
 select max(gross)
 from Employee where grade ='B+' or grade = 'C+';
-
- Max :- to Find the Maximum Value
+---------------------------------
+4. Max :- to Find the Maximum Value
 Display the Maximum  value from table
 ------------------------------------------
 drop table if exists DEPT030;
