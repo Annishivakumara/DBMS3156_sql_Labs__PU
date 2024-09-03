@@ -29,11 +29,17 @@ insert into  faculty values(
 333, 'Pradeep' , 'MATH');
 
 insert into Course values(
-
+ 'DBMS','LFL05','UF01', 101),
+'DSA','LFL06','UF02', 102),
+ 'MATH','LFL07','UF03', 103),
+ 'FDA','LFL08','UF04', 104),
 );
 
 insert into Enrolled values(
-  
+   2023,'DBMS'),
+ 2024,'DSA'),
+ 2025,'MATH'),
+ 2026,'FDA');
 );
 
 
