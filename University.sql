@@ -43,4 +43,5 @@ insert into Enrolled values(
 );
 
 
-
+select *
+from University;
