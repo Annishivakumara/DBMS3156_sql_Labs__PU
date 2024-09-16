@@ -65,6 +65,14 @@ show tables;
  select *
  from Borrower;
  --5. Find the name and Loan Num of the customer having a Loan at the prfeered Branch
-  select distinct customer_name , Borrower.loan_num
+   select distinct customer_name , Borrower.loan_num
    from Borrower , Loan
    where Borrower.loan_num =Loan.loan_num and Branch_name ="pj_extension";
+--6. find the city of a customer with Account number  123?
+   SELECT customer_city
+   FROM Customer
+   WHERE customer_name = (
+   SELECT customer_name
+   FROM Depositor
+   WHERE AccNo = 123
+   );
