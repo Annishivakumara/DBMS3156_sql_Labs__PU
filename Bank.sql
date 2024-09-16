@@ -1,10 +1,9 @@
-  drop database if exists Bank;
-  create database Bank;
-  use Bank;
-  
-  
+drop database if exists Bank;
+create database Bank ;
+use Bank;
+show tables;
   create table Branch(Branch_name varchar(20) primary key, Branch_city varchar(20), Assets float);
-  create table Account(AccNo int primary key , Branch_name varchar(20) ,balance float, foreign key(Branch_name) references Branch(Branch_name) on delete cascade);
+  create table Account(AccNo int primary key , Branch_name varchar(20) ,balance decimal(10,2), foreign key(Branch_name) references Branch(Branch_name) on delete cascade);
   
   create table Customer(customer_name varchar(20) primary key , customer_street varchar(20), customer_city varchar(20));
   create table Depositor(customer_name varchar(20) , AccNo int , foreign key(customer_name) references Customer(customer_name), foreign key(AccNo) references Account(AccNo)on delete cascade);
@@ -44,6 +43,28 @@
   insert into Borrower values('Shashi', 03);
   insert into Borrower values('Sharath', 04);
   
-     
   select *
-  from  Bank ;
+    from Branch;
+
+
+
+--please Add Comment When  your going to run on into the compiler
+-- 1. Find the names of all branches in the Loans Relation 
+  select Branch_name
+  from Loan;
+  
+-- 2. Find the names of all branches in the Loans Relation and remove dublicates
+  select  distinct Branch_name 
+  from Loan;
+  
+ --3. Find the Loan Number of those loans with amount between 50000 to 60000
+ SELECT  loan_num
+ from Loan where ammount between 50000 and 60000;
+ 
+ --4. find the cartesion product of the Borrower_loan 
+ select *
+ from Borrower;
+ --5. Find the name and Loan Num of the customer having a Loan at the prfeered Branch
+  select distinct customer_name , Borrower.loan_num
+   from Borrower , Loan
+   where Borrower.loan_num =Loan.loan_num and Branch_name ="pj_extension";
