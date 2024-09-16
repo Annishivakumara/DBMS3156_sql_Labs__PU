@@ -4,7 +4,7 @@
   
   
   create table Branch(Branch_name varchar(20) primary key, Branch_city varchar(20), Assets float);
-  create table Account(AccNo int primary key , Branch_name varchar(20) , foreign key(Branch_name) references Branch(Branch_name) on delete cascade, balance float);
+  create table Account(AccNo int primary key , Branch_name varchar(20) ,balance float, foreign key(Branch_name) references Branch(Branch_name) on delete cascade);
   
   create table Customer(customer_name varchar(20) primary key , customer_street varchar(20), customer_city varchar(20));
   create table Depositor(customer_name varchar(20) , AccNo int , foreign key(customer_name) references Customer(customer_name), foreign key(AccNo) references Account(AccNo)on delete cascade);
