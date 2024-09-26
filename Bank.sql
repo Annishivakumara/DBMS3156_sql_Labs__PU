@@ -46,8 +46,6 @@ show tables;
   select *
     from Branch;
 
-
-
 --please Add Comment When  your going to run on into the compiler
 -- 1. Find the names of all branches in the Loans Relation 
   select Branch_name
