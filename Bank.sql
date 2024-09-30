@@ -2,6 +2,7 @@ drop database if exists Bank;
 create database Bank ;
 use Bank;
 show tables;
+--create tabel's 
   create table Branch(Branch_name varchar(20) primary key, Branch_city varchar(20), Assets float);
   create table Account(AccNo int primary key , Branch_name varchar(20) ,balance decimal(10,2), foreign key(Branch_name) references Branch(Branch_name) on delete cascade);
   
