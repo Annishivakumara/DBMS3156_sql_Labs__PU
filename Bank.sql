@@ -69,7 +69,7 @@ show tables;
    from Borrower , Loan
    where Borrower.loan_num =Loan.loan_num and Branch_name ="pj_extension";
 
---6. find the city of a customer with Account number  123?
+ --6. find the city of a customer with Account number  123?
    SELECT customer_city
    FROM Customer
    WHERE customer_name = (
@@ -77,3 +77,12 @@ show tables;
    FROM Depositor
    WHERE AccNo = 123
    );
+ --7. Find the sum of  total account balance of any branch. 
+SELECT  Branch_name , avg(balance) 
+from Account where Branch_name = "pj_extension";
+ --8. Find the number of branches that currently DON'T have loans
+SELECT COUNT(B.Branch_name)
+FROM Branch B
+LEFT JOIN Loan L ON B.Branch_name = L.Branch_name
+WHERE L.Branch_name IS NULL;
+
