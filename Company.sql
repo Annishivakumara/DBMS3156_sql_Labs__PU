@@ -83,3 +83,15 @@ select Fname
 | Ahmad    |
 | Alicia   |
 +----------+
+--9 
+ select distinct Pnumber
+    -> from Project , department, employee
+    -> where Dnum=Dnumber and Mgr_ssn=Ssn and Lname="Smith"  union
+    -> select distinct Fname
+    -> from employee , works_on , project
+    -> where Pnumber=Pno  and Essn=Ssn and Lname="Smith";
++---------+
+| Pnumber |
++---------+
+| John    |
++---------+
