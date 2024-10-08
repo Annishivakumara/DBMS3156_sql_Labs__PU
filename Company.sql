@@ -52,7 +52,16 @@ select Bdate , Address
 SELECT Pnumber, Lname, Address, Bdate Mgr_ssn
 from Department  as D, Employee as E , Project  as P where
 D.Dnumber=P.Dnum and E.Ssn=D.Mgr_ssn and Plocation="Stafford";
-
++---------+---------+----------+-------------------------+------------+-----------+
+| Pnumber | Lname   | Fname    | Address                 | Bdate      | Mgr_ssn   |
++---------+---------+----------+-------------------------+------------+-----------+
+|      10 | Borg    | James    | 450 Stone, Houston, TX  | 1937-11-10 | 888665555 |
+|      10 | Wallace | Jennifer | 291 Berry, Bellaire, TX | 1941-06-20 | 987654321 |
+|      10 | Wong    | Franklin | 638 Voss, Houston, TX   | 1955-12-08 | 333445555 |
+|      30 | Borg    | James    | 450 Stone, Houston, TX  | 1937-11-10 | 888665555 |
+|      30 | Wallace | Jennifer | 291 Berry, Bellaire, TX | 1941-06-20 | 987654321 |
+|      30 | Wong    | Franklin | 638 Voss, Houston, TX   | 1955-12-08 | 333445555 |
++---------+---------+----------+-------------------------+------------+-----------+
 --6. Retrive All Employee's Whose Address is in Houston Taxes
 SELECT  ALL  *
 from Employee  where Address ="Houston,TX";
