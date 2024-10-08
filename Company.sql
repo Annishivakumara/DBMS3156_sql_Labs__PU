@@ -1,7 +1,11 @@
 --1. Retirive the Bdate and Address of the Employee Whose name is "John"
-SELECT Bdate, Address
-from Employee
-where Fname ="John";
+select Bdate , Address
+    -> from employee where Fname="JOHN";
++------------+--------------------------+
+| Bdate      | Address                  |
++------------+--------------------------+
+| 1965-01-09 | 731 Fondren, Houston, TX |
++------------+--------------------------+
 
 --2. Select all Employee SSn
 SELECT  ALL Ssn
