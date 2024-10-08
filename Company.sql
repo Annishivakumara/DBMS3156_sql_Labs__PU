@@ -38,10 +38,17 @@ select Bdate , Address
 | 999887777 | Alicia   | Administration |
 +-----------+----------+----------------+
 --4. Retrive the name and address of Employee who work  for the Research deportment 
-select  Fname , Address
-from Employee  as E , Department as D where   D.Dnumber=E.Dno and Dname="Research";
-
---5.
+ select Fname , Address
+    -> from employee as E , department as D where D.Dnumber=E.Dno and Dname="Research";
++----------+--------------------------+
+| Fname    | Address                  |
++----------+--------------------------+
+| John     | 731 Fondren, Houston, TX |
+| Franklin | 638 Voss, Houston, TX    |
+| Joyce    | 5631 Rice, Houston, TX   |
+| Ramesh   | 975 Fire Oak, Humble, TX |
++----------+--------------------------+
+--5.Lwngth Quastion You should Understand By using Solution of the code
 SELECT Pnumber, Lname, Address, Bdate Mgr_ssn
 from Department  as D, Employee as E , Project  as P where
 D.Dnumber=P.Dnum and E.Ssn=D.Mgr_ssn and Plocation="Stafford";
