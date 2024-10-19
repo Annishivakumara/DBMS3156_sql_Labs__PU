@@ -119,4 +119,14 @@ SELECT *
 from Examples;
 
 --condition based Query
+CREATE VIEW Examples AS
+SELECT Customer.customer_name , Account.AccNo , Account.balance
+from Customer
+INNER JOIN  Depositor on Customer.customer_name=Depositor.customer_name
+INNER JOIN  Account on  Account.AccNo=Depositor.AccNo
+where Customer.customer_name='Shivakumar' or Depositor.customer_name ='Shashi'  ---hare is the specifc  condition 
+order by Customer.customer_name ASC;
+
+SELECT *
+from Examples;
 -------------------------------------------------------------------
