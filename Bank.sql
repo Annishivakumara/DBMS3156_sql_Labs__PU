@@ -93,3 +93,17 @@ where Assets >=3001;
 
 SELECT  *
 from  Branch_That_is_me;
+
+-- There are two types of view's 
+--1.Inner view
+--2.join view
+
+-- Inner view is similar to the Normal view 
+-- 2. join view is 
+--create  VIEW BranchName  AS
+SELECT Branch.Branch_name , Branch.Branch_city , Account.AccNo
+from Branch
+INNER JOIN Account  on  Account.Branch_name=Branch.Branch_name -- hare join is made 
+where AccNo=123;
+SELECT *
+FROM BranchName;
