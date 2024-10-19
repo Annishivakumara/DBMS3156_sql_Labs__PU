@@ -130,3 +130,27 @@ order by Customer.customer_name ASC;
 SELECT *
 from Examples;
 -------------------------------------------------------------------
+--Trigeer example for Understanding  the  query
+CREATE TABLE Account_Changes (
+    change_id INT PRIMARY KEY ,
+    AccNo INT,
+    customer_name VARCHAR(20),
+    old_balance DECIMAL(10,2),
+    new_balance DECIMAL(10,2),
+    change_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TRIGGER LogBalanceUpdate
+AFTER UPDATE ON Account
+FOR EACH ROW
+BEGIN
+    -- Insert the account number, customer name, old balance, new balance into Account_Changes
+    INSERT INTO Account_Changes (AccNo, customer_name, old_balance, new_balance)
+    VALUES (
+        OLD.AccNo, 
+        (SELECT customer_name FROM Depositor WHERE Depositor.AccNo = OLD.AccNo), 
+        OLD.balance, 
+        NEW.balance
+    );
+END;
+UPDATE Account SET balance = 250000 WHERE AccNo = 123;
+SELECT * FROM Account_Changes;
