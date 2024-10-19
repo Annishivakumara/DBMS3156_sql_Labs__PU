@@ -85,3 +85,11 @@ SELECT COUNT(B.Branch_name)
 FROM Branch B
 LEFT JOIN Loan L ON B.Branch_name = L.Branch_name
 WHERE L.Branch_name IS NULL;
+--9. How to create a View  
+CREATE VIEW Branch_That_is_me AS
+select Branch_city , Assets
+from Branch  
+where Assets >=3001;
+
+SELECT  *
+from  Branch_That_is_me;
