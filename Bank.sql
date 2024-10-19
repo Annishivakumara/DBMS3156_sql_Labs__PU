@@ -107,3 +107,16 @@ INNER JOIN Account  on  Account.Branch_name=Branch.Branch_name -- hare join is m
 where AccNo=123;
 SELECT *
 FROM BranchName;
+
+-- example on inner join 
+CREATE VIEW Examples AS
+SELECT Customer.customer_name , Account.AccNo , Account.balance
+from Customer
+INNER JOIN  Depositor on Customer.customer_name=Depositor.customer_name
+INNER JOIN  Account on  Account.AccNo=Depositor.AccNo;
+
+SELECT *
+from Examples;
+
+--condition based Query
+-------------------------------------------------------------------
