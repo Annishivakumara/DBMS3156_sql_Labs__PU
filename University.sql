@@ -1,17 +1,19 @@
 drop database exists University;
 create database University;
 use University;
-
+use shop;
+--Student Table
 create table Student(
 S_id int primary key, Sname varchar(20) , Major varchar(20),
  Addres varchar(20), level varchar(20), age int , DOB Date 
 );
-
+---faculty
 create table faculty (
 F_id int primary key,
 Fname varchar(20) ,
 Deport  varchar(10));
 
+--Course
 create table Course (
 Cname varchar(10) primary key,
 Meets varchar(20), 
