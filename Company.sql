@@ -1,15 +1,16 @@
 --1. Retirive the Bdate and Address of the Employee Whose name is "John"
-select Bdate , Address
-    -> from employee where Fname="JOHN";
+       select Bdate , Address
+       from employee where Fname="JOHN";
 +------------+--------------------------+
 | Bdate      | Address                  |
 +------------+--------------------------+
 | 1965-01-09 | 731 Fondren, Houston, TX |
 +------------+--------------------------+
 
+    
 --2. Select all Employee SSn
  select all Ssn
-    -> from employee;
+ from employee;
 +-----------+
 | Ssn       |
 +-----------+
@@ -24,7 +25,7 @@ select Bdate , Address
 +-----------+
 --3.Retrive the combination of employee ssn and deportment dname in the database
  select Ssn, Fname,Dname
-    -> from employee , department where Dnumber=Dno;
+ from employee , department where Dnumber=Dno;
 +-----------+----------+----------------+
 | Ssn       | Fname    | Dname          |
 +-----------+----------+----------------+
@@ -39,7 +40,7 @@ select Bdate , Address
 +-----------+----------+----------------+
 --4. Retrive the name and address of Employee who work  for the Research deportment 
  select Fname , Address
-    -> from employee as E , department as D where D.Dnumber=E.Dno and Dname="Research";
+ from employee as E , department as D where D.Dnumber=E.Dno and Dname="Research";
 +----------+--------------------------+
 | Fname    | Address                  |
 +----------+--------------------------+
@@ -71,7 +72,7 @@ SELECT *
 from Employee WHERE Dno=5 and Salary BETWEEN 30000 and 40000;
 --8 For each Employee retribve the Employee name and the name of his or her Immediate Supervisor
 select Fname
-    -> from employee  where Ssn=Super_ssn is not null;--Should use  not null  
+from employee  where Ssn=Super_ssn is not null;--Should use  not null  
 +----------+
 | Fname    |
 +----------+
@@ -85,13 +86,13 @@ select Fname
 +----------+
 --9 
  select distinct Pnumber
-    -> from Project , department, employee
-    -> where Dnum=Dnumber and Mgr_ssn=Ssn and Lname="Smith"  union
-    -> select distinct Fname
-    -> from employee , works_on , project
-    -> where Pnumber=Pno  and Essn=Ssn and Lname="Smith";
-+---------+
-| Pnumber |
-+---------+
-| John    |
-+---------+
+   from Project , department, employee
+   where Dnum=Dnumber and Mgr_ssn=Ssn and Lname="Smith"  union
+   select distinct Fname
+   from employee , works_on , project
+   where Pnumber=Pno  and Essn=Ssn and Lname="Smith";
+  +---------+
+  | Pnumber |
+  +---------+
+  | John    |
+  +---------+
