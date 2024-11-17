@@ -63,13 +63,16 @@ D.Dnumber=P.Dnum and E.Ssn=D.Mgr_ssn and Plocation="Stafford";
 |      30 | Wallace | Jennifer | 291 Berry, Bellaire, TX | 1941-06-20 | 987654321 |
 |      30 | Wong    | Franklin | 638 Voss, Houston, TX   | 1955-12-08 | 333445555 |
 +---------+---------+----------+-------------------------+------------+-----------+
+       
 --6. Retrive All Employee's Whose Address is in Houston Taxes
 SELECT  ALL  *
 from Employee  where Address ="Houston,TX";
 
+
 --7. Retrive All Employee in Department No 5 whose salary is Betwen 30.000 and 40.000
 SELECT *
 from Employee WHERE Dno=5 and Salary BETWEEN 30000 and 40000;
+
 
 --8 For each Employee retribve the Employee name and the name of his or her Immediate Supervisor
 select Fname
